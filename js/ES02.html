@@ -1,0 +1,35 @@
+<html>
+	<body>
+		<div id="output"></div>
+		<script type="text/javascript">
+		//USA IL MEMOIZATION PATTERN PER CREARE UNA CACHE DEI VALORI GIÀ COMPUTATI
+		(function (){			
+			var DEBUG_ON = false;
+
+			var output = document.getElementById('output');
+
+			function fact (num){
+
+					//SE LA CHIAVE 'num' NON È SETTATA, IL VALORE NON È IN CACHE
+					if (!fact.cache.hasOwnProperty(num)){
+						
+						//COMPUTALO E MEMORIZZALO (SE <= MEMORIZZA 1 DIRETTAMENTE)
+						fact.cache[num] = num <= 1 ? 1 : num * fact(num-1);
+
+						debug("Caching for "+ num +", value: "+ fact.cache[num]);
+					}					
+					return fact.cache[num];
+			};
+
+			//DICHIARA E INIZIALIZZA L'OGETTO CACHE
+			fact.cache = {};
+
+			for (var i = 0; i < 10; i++){
+				output.innerHTML = output.innerHTML + '<br/>' + 'fact('+ i +') = ' + fact(i);
+			}
+
+			function debug(msg) { if (DEBUG_ON) console.log(msg); }
+		})();
+		</script>
+	</body>
+</html>

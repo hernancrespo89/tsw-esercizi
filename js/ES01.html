@@ -1,0 +1,20 @@
+<html>
+	<head></head>
+	<body>
+		Accetto il trattamento dei dati <input type="checkbox" id="accept">
+		<div id="message"></div>
+	</body>
+	<script type="text/javascript">
+	(function (){
+			var ckbx = document.getElementById('accept');
+
+			var check = function() {
+				document.getElementById('message').innerHTML = 
+				"Autorizzazione" + (ckbx.checked ? " " : " NON ") + "Concessa";
+			}
+
+			check();
+			ckbx.onclick = check;
+	})();
+	</script>
+</html>
