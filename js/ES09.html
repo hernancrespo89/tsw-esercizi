@@ -1,0 +1,58 @@
+<html>
+	<body>
+			<h1>HEADER 1</h1>
+			<h2>HEADER 2</h2>
+			<h3>HEADER 3</h3>			
+			Lorem ipsum Nisi consectetur nulla ut culpa aute anim ad ut ad consectetur ullamco ut dolor irure ullamco aliquip nulla adipisicing Duis in officia mollit est pariatur.				
+		<script>
+		(function() {
+			var bgc = prompt("background color:", "00ff00"),
+				textC = prompt("text color:", "ff0000"),
+				titleC = prompt("title color:", "0000ff"),
+				textSize = prompt("text size:", 4);
+
+
+			if (bgc == textC && textC == titleC && bgc == titleC && bgc == "*"){
+				var link = document.createElement('link');
+				link.rel="stylesheet"
+				link.type="text/css"
+				link.href="./style.css";
+				document.head.appendChild(link);
+			} else {
+				console.log(bgc == textC == titleC);
+				console.log(bgc + " " + textC + " " +titleC);
+				if (textSize < 1 || textSize > 7) {
+					alert("Invalid text size, using: 4");
+					textSize = 4;
+				}
+	
+				if (bgc == textC){ 
+					if (parseInt(bgc, 16) < 0x888888) bgc = "dadada";
+					else bgc = "252525";
+				} if (textC == titleC || bgc == titleC) {
+					if (parseInt(titleC, 16) < 0x888888) titleC = "d4d4d4";
+					else titleC = "2b2b2b";
+				}
+	
+				var style = document.createElement('style');
+				style.type="text/css";
+				style.innerHTML = "\
+					html { font-size: 7px; }\
+					body {\
+						background-color: #"+bgc+";\
+						color: #"+textC+";\
+						font-size: "+textSize+"em;\
+					}\
+					h1, h2, h3 {\
+						color: #"+titleC+";\
+						font-size: 1em;\
+						font-weight: bold;\
+					}\
+					h1 {font-size: 3em;}\
+					h2 {font-weight: normal;}";				
+				document.head.appendChild(style);
+			}
+		})();
+		</script>
+	</body>	
+</html>

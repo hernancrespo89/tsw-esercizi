@@ -1,0 +1,29 @@
+<html>
+	<body>
+		<div id="output"></div>
+		<a href="#" id="btn-prompt">Un altro prompt</a>
+	</body>
+	<script type="text/javascript">
+		(function () {
+
+			var btnPrompt = document.getElementById("btn-prompt");
+			var output = document.getElementById("output");
+			
+			btnPrompt.onclick = compute;
+	
+			compute();
+	
+			function compute () {		
+				var num = prompt("Inserisci un numero", 1);
+				if (num <0 || num >15) alert("Inserire un numero tra 0 e 15");
+				else output.innerHTML = fact(num);			
+			};
+	
+			function fact(n){
+				return n <= 1 ? 1 : n * fact(n-1);
+			};
+
+		})();
+
+	</script>
+</html>

@@ -1,0 +1,23 @@
+<html>
+	<body>
+		
+		<table border="true">
+			<thead><td colspan="2">TABELLINA DEL 7</td></thead>
+			<tbody id="tb">
+				
+			</tbody>
+		</table>
+
+		<script type="text/javascript">
+			(function(){
+				var rows = "";
+				for (var i = 1; i <= 10; i++){
+					rows += "<tr><td>7 x " + i +"</td><td>"+ i*7 +"</td></tr>";
+					console.log(i + " :" + rows);
+				}
+				document.getElementById('tb').innerHTML = rows;
+			})();
+
+		</script>
+	</body>
+</html>

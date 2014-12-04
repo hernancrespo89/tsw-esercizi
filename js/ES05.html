@@ -1,0 +1,39 @@
+<html>
+	<body>
+		<style type="text/css">
+			td { text-align: center; }
+			button { width: 100%;}
+		</style>
+
+		<table border="true">
+			<thead><td colspan="2">TABELLINA DEL <span id="number">7</span></td></thead>
+			<tbody id="tb">
+				
+			</tbody>
+			<tfoot><td colspan="2"><button id="again">Ripeti</button></td></tfoot>
+		</table>
+		
+		<script type="text/javascript">
+		(function () {
+
+			document.getElementById('again').onclick = compute;
+			compute();
+
+			function compute () { 
+				var num = prompt("Inserisci un numero", 1);
+
+				if (num < 1 || num > 10) alert("Devi inserire un numero compreso tra 1 e 10");
+				else {
+					var rows = "";
+					for (var i = 1; i <= 10; i++) {
+						rows += "<tr><td>" + num + " x " + i +"</td><td>"+ i*num +"</td></tr>";
+					}
+					document.getElementById('number').innerHTML = num;
+					document.getElementById('tb').innerHTML = rows;
+				}
+			}
+
+		})();
+		</script>
+	</body>
+</html>

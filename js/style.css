@@ -1,0 +1,13 @@
+html { font-size: 7px; }
+body {
+	background-color: pink;
+	color: green;
+	font-size: 3em;
+}
+h1, h2, h3 {
+	color: blue;
+	font-size: 1em;
+	font-weight: bold;
+}
+h1 {font-size: 3em;}
+h2 {font-weight: normal;};				

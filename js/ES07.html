@@ -1,0 +1,37 @@
+<html>
+	<body>
+		<style type="text/css">
+			td { text-align: center; padding: 10px;}
+		</style>
+
+		<table border="true">
+			<thead>
+				<tr><td colspan="2">Campionato di Pallastrada</td></tr>
+				<tr><td>Posizione</td><td>Nome</td></tr>
+			</thead>
+			<tbody id="tb">
+				
+			</tbody>
+		</table>
+
+		<hr/>
+		<span>Ciao <b id="nc"></b>, ci rivediamo tra 4 anni</span>
+		
+		<script type="text/javascript">
+		(function () {
+
+			var input = prompt("Inserisci nome e cognome", "");
+			
+			if (input !== null && input !== "")	{
+				var rows = "";
+				for (var i = 1; i <= 10; i++) {
+					rows += "<tr><td>"+i+"</td><td>Nome Casuale</td></tr>";
+				}
+				alert("Ciao: " + input);
+				document.getElementById('tb').innerHTML = rows;					
+				document.getElementById('nc').innerHTML = input;					
+			} else alert("Inserire nome e cognome corretti");
+		})();
+		</script>
+	</body>
+</html>
