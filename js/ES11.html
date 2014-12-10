@@ -1,0 +1,34 @@
+<html>
+	<body>
+		<ol id="sites">
+			
+		</ol>
+	<script type="text/javascript">
+	(function () {
+		var vals = ["www.google.com", "www.stackoverflow.com", "www.yahoo.com", "www.facebook.com"];
+
+		for (var i = 0, items = ""; i < vals.length; items += li(vals[i++]));
+
+		var list = $id('sites');
+		list.innerHTML = items;
+
+		var input = prompt("Numero del sito da visitare"), url = vals[0];
+		
+		if (input < 1 || input > vals.length) 
+			url = prompt("Scelta non valida inserire un url da visitare", url);
+		else url = vals[input -1];
+
+		location.href = "//" + url;
+
+		function li(cont) {
+			return "<li>" + cont + "</li>";
+		}
+
+		function $id (id) {
+			return document.getElementById(id);
+		}
+
+	})()
+	</script>
+	</body>
+</html>

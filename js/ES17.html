@@ -1,0 +1,23 @@
+<html>
+	<body>
+		<div id="output"></div>
+	<script type="text/javascript">
+	(function () {
+
+		alert("Funzione eseguita: average(1, 2, 3, 45, 32, 1, 23, 1,213 , 12, 32);");
+		document.getElementById('output').innerHTML = "Media: " + average(1, 2, 3, 45, 32, 1, 23, 1,213 , 12, 32);
+
+		function average() {
+			for (var i = 0, sum = 0; i < arguments.length; i++){;
+				if (isNaN(arguments[i])) {
+					alert("Errore: I parametri devono essere numerici"); 
+					return;
+				}	sum += arguments[i];
+			}
+			return sum / (arguments.length-1);
+		}
+
+	})()
+	</script>
+	</body>
+</html>

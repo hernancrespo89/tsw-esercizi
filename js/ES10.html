@@ -1,0 +1,37 @@
+<html>
+	<body>
+		<div id="output"></div>
+		<script>
+		(function() {
+			var values = [];
+
+			//L'ESPRESSIONE DI ASSEGNAMENTO ASSUME IL VALORE ASSEGNATO
+			while ((input = prompt("Inserici un numero, 'end' per terminare")) != 'end') {	
+				if (isNaN(input)) alert("Inserire un valore numerico");
+				else values.push(parseFloat(input));	
+			}
+			
+			// i È DISPONIBILE AL DIFUORI DEL LOOP POICHÈ LEGATA ALLA CLOSURE			
+			while (i = prompt("Calcolare la media? (si/no)")){
+
+				if (i == 'si' || i == 'no') break;
+				else alert("Inserire 'si' o 'no'");
+			}
+
+			if (i == 'si') {
+
+				var table = "<table border=1><thead><tr><td>Valori</td></tr></thead><tbody>";
+
+				for (var i = 0, sum = 0; i < values.length; sum += values[i++]) {
+					table += "<tr><td>" + values[i] + "</tr></td>";	
+				}
+
+				table += "</tbody><tfoot><tr><td> Media: <b>" + sum/(values.length-1) + "</b></td></tr></tfoot></table>" ;
+				
+				document.getElementById('output').innerHTML = table;
+			}
+
+		})();
+		</script>
+	</body>	
+</html>

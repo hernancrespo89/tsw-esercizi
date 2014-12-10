@@ -1,0 +1,27 @@
+<html>
+	<body>
+		<div id="output"></div>
+	<script type="text/javascript">
+	(function () {
+
+		var even = 0;
+		while((input = prompt("Inserisci un numero, 'fine' per terminare.", 1)) != 'fine'){
+			if(pari(input)) even++;
+		}
+
+		document.getElementById('output').innerHTML = "NUMERI PARI INSERITI: " + even;
+
+
+		function pari (n){
+			if (isNaN(n)) {
+				alert("Inserire un valore numerico");
+				return false;
+			}			
+
+			return n%2 == 0;
+		}
+
+	})()
+	</script>
+	</body>
+</html>

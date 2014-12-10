@@ -1,0 +1,23 @@
+<html>
+	<body>
+		<div id="output"></div>
+	<script type="text/javascript">
+	(function () {
+
+		input = prompt("Numero di lanci");
+		document.getElementById('output').innerHTML = lancioDado(input);
+
+		function lancioDado(n) {
+			if (isNaN(n)) return "INSERIRE UN VALORE NUMERICO";
+
+			var results = [];
+			for (var i = 0; i < n; i++) results.push(((Math.random() * 6) +1) | 0);
+
+			var table = "<table border=1><thead><tr><td colspan="+ results.length > 15 ? 15 : results.length +">"+ LANCI
+
+		}
+
+	})()
+	</script>
+	</body>
+</html>

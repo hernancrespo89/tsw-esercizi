@@ -1,0 +1,28 @@
+<html>
+	<body>
+		<div id="output"></div>
+	<script type="text/javascript">
+	(function () {
+
+		var input = prompt("Inserisci una temperatura da convertire");
+
+		function fahrenheit (c) {
+			check(c);
+			return 9.0/5 * c +32;
+		}
+
+		function celsius (f) {
+			check(f);
+			return 5.0/9 * (f -32);
+		}
+
+		function check (n){
+			if (isNaN(n)) alert("inserire un valore numerico");
+		}
+
+		document.getElementById('output').innerHTML = "Input: " + input + "<br/>Celsius: " + celsius(input) + "<br/>Fahrenheit: " + fahrenheit(input);
+
+	})()
+	</script>
+	</body>
+</html>

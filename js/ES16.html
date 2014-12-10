@@ -1,0 +1,41 @@
+<html>
+	<body>
+		<div id="output"></div>
+	<script type="text/javascript">
+	(function () {
+
+		var input = prompt("Inserire un numero per il calcolo");
+		document.getElementById('output').innerHTML = "Risultato: " + calcola(input);
+
+		function calcola(num) {			
+			if (arguments.length > 1) return "TROPPI ARGOMENTI!";
+			if (isNaN(num) || num <1 || num >30) return "Volevo un valore tra 1 e 30";
+
+			if(num <= 10) op = fact;
+			else if(num <= 15) op = lect;
+			else if(num <= 20) op = fibo;
+			else op = square;
+
+			return op(num);
+		}
+
+		function square(n) {return n*n};
+
+		function fact(n) { return n <= 1 ? 1 : n * fact(n-1); }
+		
+		function fibo(n) { return n <= 1 ? n : fibo(n-1) + fibo(n-2)}
+		
+		function lect(n) {
+			switch (parseInt(n)) {
+				case 11: return "undici"; 
+				case 12: return "dodici";
+				case 13: return "tredici";
+				case 14: return "quattordici";
+				case 15: return "quindici";
+			}
+		}
+
+	})()
+	</script>
+	</body>
+</html>

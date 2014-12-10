@@ -1,0 +1,23 @@
+<html>
+	<body>
+		<div id="output"></div>
+	<script type="text/javascript">
+	(function () {
+
+		quadratoDiAsterischi(prompt("Inserire la grandezza del lato"));
+
+		function quadratoDiAsterischi(size) {
+			var res = ""
+			for(var i = 0; i < size; i++){
+				for(var j = 0; j < size; j++)
+					res += '*';
+				res += '<br/>';
+			}
+			document.getElementById('output').innerHTML = res;
+		}
+
+
+	})()
+	</script>
+	</body>
+</html>
